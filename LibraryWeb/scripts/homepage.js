@@ -1,4 +1,4 @@
-const JOB_API_LINK =  "https://reimagined-disco-69wxj74vwpwp25xgp-5001.app.github.dev/jobs";
+const JOB_API_LINK =  "https://curly-invention-r47rr5q756p7cp9x4-5001.app.github.dev/books";
 
 fetch(JOB_API_LINK).then(response=>{
     if(!response.ok)
@@ -11,7 +11,7 @@ fetch(JOB_API_LINK).then(response=>{
         const row = document.createElement("tr");
 
         row.innerHTML=`
-        <td>${job.job_id}</td>
+        <td>${job.book_id}</td>
         <td>${job.job_title}</td>
         <td>${job.min_salary}</td>
         <td>${job.max_salary}</td>
