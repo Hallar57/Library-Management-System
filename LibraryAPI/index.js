@@ -26,6 +26,86 @@ app.get('/books',async(req,res)=>{
     }
 });
 
+app.get('/authors',async(req,res)=>{
+    try{
+        const result = await pool.query('select * from authors');
+        res.json(result.rows);
+    }
+    catch(err){
+        res.status(500).json({Error:err.message});
+    }
+});
+
+app.get('/categories',async(req,res)=>{
+    try{
+        const result = await pool.query('select * from categories');
+        res.json(result.rows);
+    }
+    catch(err){
+        res.status(500).json({Error:err.message});
+    }
+});
+
+app.get('/staff',async(req,res)=>{
+    try{
+        const result = await pool.query('select * from staff');
+        res.json(result.rows);
+    }
+    catch(err){
+        res.status(500).json({Error:err.message});
+    }
+});
+
+app.get('/members',async(req,res)=>{
+    try{
+        const result = await pool.query('select * from members');
+        res.json(result.rows);
+    }
+    catch(err){
+        res.status(500).json({Error:err.message});
+    }
+});
+
+app.get('/membership_type',async(req,res)=>{
+    try{
+        const result = await pool.query('select * from membershiptype');
+        res.json(result.rows);
+    }
+    catch(err){
+        res.status(500).json({Error:err.message});
+    }
+});
+
+app.get('/loans',async(req,res)=>{
+    try{
+        const result = await pool.query('select * from loans');
+        res.json(result.rows);
+    }
+    catch(err){
+        res.status(500).json({Error:err.message});
+    }
+});
+
+app.get('/fines',async(req,res)=>{
+    try{
+        const result = await pool.query('select * from fines');
+        res.json(result.rows);
+    }
+    catch(err){
+        res.status(500).json({Error:err.message});
+    }
+});
+
+app.get('/reservations',async(req,res)=>{
+    try{
+        const result = await pool.query('select * from reservations');
+        res.json(result.rows);
+    }
+    catch(err){
+        res.status(500).json({Error:err.message});
+    }
+});
+
 const PORT = process.env.PORT;
 app.listen(PORT,()=> {
     console.log(`Connected Successfully........Running on PORT ${PORT}`);
