@@ -18,7 +18,7 @@ app.get('/',async(req,res)=>{
 
 app.get('/books',async(req,res)=>{
     try{
-        const result = await pool.query('select * from books');
+        const result = await pool.query('select * from view1');
         res.json(result.rows);
     }
     catch(err){
