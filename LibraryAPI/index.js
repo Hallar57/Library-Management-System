@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.get('/',async(req,res)=>{
     try{
-        res.json("WELCOME TO STUDENT API")
+        res.json("hi")
     }
     catch(err){
         res.status(500).json({Error:err.message});
