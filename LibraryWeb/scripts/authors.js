@@ -16,11 +16,7 @@ fetch(AUTHORS_API_LINK)
         <td>${authors.author_id}</td>
         <td>${authors.author_name}</td>
         <td>${authors.nationality}</td>
-        <td>${authors.publisher_id}</td>
-        <td>${authors.category_id}</td>
-        <td>${authors.isbn}</td>
-        <td>${authors.published_year}</td>
-        <td>${authors.available_copies}</td>
+        <td>${authors.date_of_birth}</td>
         `;
       tbody.appendChild(row);
     });
