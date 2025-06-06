@@ -13,10 +13,9 @@ fetch(MEMBERSHIP_TYPE_API_LINK)
       const row = document.createElement("tr");
 
       row.innerHTML = `
-        <td>${membership_type.author_id}</td>
-        <td>${membership_type.author_name}</td>
-        <td>${membership_type.nationality}</td>
-        <td>${membership_type.date_of_birth}</td>
+        <td>${membership_type.member_type_id}</td>
+        <td>${membership_type.member_id}</td>
+        <td>${membership_type.member_type_name}</td>
         `;
       tbody.appendChild(row);
     });

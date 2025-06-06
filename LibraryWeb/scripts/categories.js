@@ -13,10 +13,8 @@ fetch(CATEGORIES_API_LINK)
       const row = document.createElement("tr");
 
       row.innerHTML = `
-        <td>${categories.author_id}</td>
-        <td>${categories.author_name}</td>
-        <td>${categories.nationality}</td>
-        <td>${categories.date_of_birth}</td>
+        <td>${categories.category_id}</td>
+        <td>${categories.category_name}</td>\
         `;
       tbody.appendChild(row);
     });

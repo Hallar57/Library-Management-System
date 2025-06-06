@@ -13,10 +13,10 @@ fetch(FINES_API_LINK)
       const row = document.createElement("tr");
 
       row.innerHTML = `
-        <td>${fines.author_id}</td>
-        <td>${fines.author_name}</td>
-        <td>${fines.nationality}</td>
-        <td>${fines.date_of_birth}</td>
+        <td>${fines.fine_id}</td>
+        <td>${fines.loan_id}</td>
+        <td>${fines.amount}</td>
+        <td>${fines.paid_status}</td>
         `;
       tbody.appendChild(row);
     });

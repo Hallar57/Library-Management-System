@@ -13,10 +13,8 @@ fetch(PUBLISHERS_API_LINK)
       const row = document.createElement("tr");
 
       row.innerHTML = `
-        <td>${publishers.author_id}</td>
-        <td>${publishers.author_name}</td>
-        <td>${publishers.nationality}</td>
-        <td>${publishers.date_of_birth}</td>
+        <td>${publishers.publisher_id}</td>
+        <td>${publishers.publisher_name}</td>
         `;
       tbody.appendChild(row);
     });

@@ -7,6 +7,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+const PORT = process.env.PORT;
+app.listen(PORT, () => {
+  console.log(`Connected Successfully........Running on PORT ${PORT}`);
+});
+
 app.get("/", async (req, res) => {
   try {
     res.json("hi");
@@ -62,7 +67,7 @@ app.get("/members", async (req, res) => {
 
 app.get("/membership_type", async (req, res) => {
   try {
-    const result = await pool.query("select * from membershiptype");
+    const result = await pool.query("select * from membership_type");
     res.json(result.rows);
   } catch (err) {
     res.status(500).json({ Error: err.message });
@@ -96,7 +101,11 @@ app.get("/reservations", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT;
-app.listen(PORT, () => {
-  console.log(`Connected Successfully........Running on PORT ${PORT}`);
+app.get("/publishers", async (req, res) => {
+  try {
+    const result = await pool.query("select * from publishers");
+    res.json(result.rows);
+  } catch (err) {
+    res.status(500).json({ Error: err.message });
+  }
 });

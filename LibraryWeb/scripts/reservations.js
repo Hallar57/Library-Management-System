@@ -13,10 +13,11 @@ fetch(RESERVATIONS_API_LINK)
       const row = document.createElement("tr");
 
       row.innerHTML = `
-        <td>${reservations.author_id}</td>
-        <td>${reservations.author_name}</td>
-        <td>${reservations.nationality}</td>
-        <td>${reservations.date_of_birth}</td>
+        <td>${reservations.reservation_id}</td>
+        <td>${reservations.book_id}</td>
+        <td>${reservations.member_id}</td>
+        <td>${reservations.status}</td>
+        <td>${reservations.reservation_date}</td>
         `;
       tbody.appendChild(row);
     });

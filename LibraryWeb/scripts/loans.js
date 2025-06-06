@@ -13,10 +13,13 @@ fetch(LOANS_API_LINK)
       const row = document.createElement("tr");
 
       row.innerHTML = `
-        <td>${loans.author_id}</td>
-        <td>${loans.author_name}</td>
-        <td>${loans.nationality}</td>
-        <td>${loans.date_of_birth}</td>
+        <td>${loans.loan_id}</td>
+        <td>${loans.member_id}</td>
+        <td>${loans.book_id}</td>
+        <td>${loans.staff_id}</td>
+        <td>${loans.loan_date}</td>
+        <td>${loans.due_date}</td>
+        <td>${loans.return_date}</td>
         `;
       tbody.appendChild(row);
     });

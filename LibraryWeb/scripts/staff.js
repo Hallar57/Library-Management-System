@@ -13,10 +13,10 @@ fetch(STAFF_API_LINK)
       const row = document.createElement("tr");
 
       row.innerHTML = `
-        <td>${staff.author_id}</td>
-        <td>${staff.author_name}</td>
-        <td>${staff.nationality}</td>
-        <td>${staff.date_of_birth}</td>
+        <td>${staff.staff_id}</td>
+        <td>${staff.staff_name}</td>
+        <td>${staff.role}</td>
+        <td>${staff.email}</td>
         `;
       tbody.appendChild(row);
     });
