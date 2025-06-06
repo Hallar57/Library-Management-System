@@ -78,6 +78,7 @@
           Books
         </button>
       </li>
+
       <li class="nav-item" role="presentation">
         <button
           class="nav-link"
@@ -92,20 +93,127 @@
           Authors
         </button>
       </li>
-      <li class="nav-item" role="presentation">
+
+            <li class="nav-item" role="presentation">
         <button
           class="nav-link"
-          id="messages-tab"
+          id="categories-tab"
           data-bs-toggle="tab"
-          data-bs-target="#messages"
+          data-bs-target="#categories"
           type="button"
           role="tab"
-          aria-controls="messages"
+          aria-controls="categories"
           aria-selected="false"
         >
-          Messages
+          Categories
         </button>
       </li>
+
+            <li class="nav-item" role="presentation">
+        <button
+          class="nav-link"
+          id="fines-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#fines"
+          type="button"
+          role="tab"
+          aria-controls="fines"
+          aria-selected="false"
+        >
+          Fines
+        </button>
+      </li>
+
+            <li class="nav-item" role="presentation">
+        <button
+          class="nav-link"
+          id="loans-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#loans"
+          type="button"
+          role="tab"
+          aria-controls="loans"
+          aria-selected="false"
+        >
+          Loans
+        </button>
+      </li>
+
+            <li class="nav-item" role="presentation">
+        <button
+          class="nav-link"
+          id="members-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#members"
+          type="button"
+          role="tab"
+          aria-controls="members"
+          aria-selected="false"
+        >
+          Members
+        </button>
+      </li>
+
+            <li class="nav-item" role="presentation">
+        <button
+          class="nav-link"
+          id="membership_type-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#membership_type"
+          type="button"
+          role="tab"
+          aria-controls="membership_type"
+          aria-selected="false"
+        >
+          Membership types
+        </button>
+      </li>
+
+            <li class="nav-item" role="presentation">
+        <button
+          class="nav-link"
+          id="publishers-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#publishers"
+          type="button"
+          role="tab"
+          aria-controls="publishers"
+          aria-selected="false"
+        >
+          Publishers
+        </button>
+      </li>
+
+            <li class="nav-item" role="presentation">
+        <button
+          class="nav-link"
+          id="reservations-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#reservations"
+          type="button"
+          role="tab"
+          aria-controls="reservations"
+          aria-selected="false"
+        >
+          Reservations
+        </button>
+      </li>
+
+            <li class="nav-item" role="presentation">
+        <button
+          class="nav-link"
+          id="staff-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#staff"
+          type="button"
+          role="tab"
+          aria-controls="staff"
+          aria-selected="false"
+        >
+          Staff
+        </button>
+      </li>
+
     </ul>
     
     <!-- Tab panes -->
@@ -142,6 +250,174 @@
       >
         <div class="table-responsive">
           <table class="table table-primary" id="authorstable">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Nationality</th>
+                <th scope="col">Date of Birth</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div> 
+      </div>
+
+            <div
+        class="tab-pane"
+        id="categories"
+        role="tabpanel"
+        aria-labelledby="categories-tab"
+      >
+        <div class="table-responsive">
+          <table class="table table-primary" id="categoriestable">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Nationality</th>
+                <th scope="col">Date of Birth</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div> 
+      </div>
+
+            <div
+        class="tab-pane"
+        id="fines"
+        role="tabpanel"
+        aria-labelledby="fines-tab"
+      >
+        <div class="table-responsive">
+          <table class="table table-primary" id="finestable">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Nationality</th>
+                <th scope="col">Date of Birth</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div> 
+      </div>
+
+            <div
+        class="tab-pane"
+        id="loans"
+        role="tabpanel"
+        aria-labelledby="loans-tab"
+      >
+        <div class="table-responsive">
+          <table class="table table-primary" id="loanstable">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Nationality</th>
+                <th scope="col">Date of Birth</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div> 
+      </div>
+
+            <div
+        class="tab-pane"
+        id="members"
+        role="tabpanel"
+        aria-labelledby="members-tab"
+      >
+        <div class="table-responsive">
+          <table class="table table-primary" id="memberstable">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Nationality</th>
+                <th scope="col">Date of Birth</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div> 
+      </div>
+
+            <div
+        class="tab-pane"
+        id="membership_type"
+        role="tabpanel"
+        aria-labelledby="membership_type-tab"
+      >
+        <div class="table-responsive">
+          <table class="table table-primary" id="membership_typetable">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Nationality</th>
+                <th scope="col">Date of Birth</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div> 
+      </div>
+
+            <div
+        class="tab-pane"
+        id="publishers"
+        role="tabpanel"
+        aria-labelledby="publishers-tab"
+      >
+        <div class="table-responsive">
+          <table class="table table-primary" id="publisherstable">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Nationality</th>
+                <th scope="col">Date of Birth</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div> 
+      </div>
+
+            <div
+        class="tab-pane"
+        id="reservations"
+        role="tabpanel"
+        aria-labelledby="reservations-tab"
+      >
+        <div class="table-responsive">
+          <table class="table table-primary" id="reservationstable">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Nationality</th>
+                <th scope="col">Date of Birth</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div> 
+      </div>
+
+            <div
+        class="tab-pane"
+        id="staff"
+        role="tabpanel"
+        aria-labelledby="staff-tab"
+      >
+        <div class="table-responsive">
+          <table class="table table-primary" id="stafftable">
             <thead>
               <tr>
                 <th scope="col">ID</th>
