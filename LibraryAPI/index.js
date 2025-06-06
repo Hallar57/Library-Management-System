@@ -22,7 +22,7 @@ app.get("/", async (req, res) => {
 
 app.get("/books", async (req, res) => {
   try {
-    const result = await pool.query("select * from view1");
+    const result = await pool.query("select * from books");
     res.json(result.rows);
   } catch (err) {
     res.status(500).json({ Error: err.message });
