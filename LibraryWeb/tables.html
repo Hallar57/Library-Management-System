@@ -81,15 +81,15 @@
       <li class="nav-item" role="presentation">
         <button
           class="nav-link"
-          id="profile-tab"
+          id="authors-tab"
           data-bs-toggle="tab"
-          data-bs-target="#profile"
+          data-bs-target="#authors"
           type="button"
           role="tab"
-          aria-controls="profile"
+          aria-controls="authors"
           aria-selected="false"
         >
-          Profile
+          Authors
         </button>
       </li>
       <li class="nav-item" role="presentation">
@@ -116,7 +116,7 @@
         role="tabpanel"
         aria-labelledby="home-tab"
       >
-                 <div class="table-responsive">
+        <div class="table-responsive">
           <table class="table table-primary" id="bookstable">
             <thead>
               <tr>
@@ -136,19 +136,27 @@
       </div>
       <div
         class="tab-pane"
-        id="profile"
+        id="authors"
         role="tabpanel"
-        aria-labelledby="profile-tab"
+        aria-labelledby="authors-tab"
       >
-         profile 
-      </div>
-      <div
-        class="tab-pane"
-        id="messages"
-        role="tabpanel"
-        aria-labelledby="messages-tab"
-      >
-         messages 
+        <div class="table-responsive">
+          <table class="table table-primary" id="authorstable">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author ID</th>
+                <th scope="col">Publisher ID</th>
+                <th scope="col">Category ID</th>
+                <th scope="col">ISBN</th>
+                <th scope="col">Published Year</th>
+                <th scope="col">Available Copies</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div> 
       </div>
     </div>
     
@@ -170,3 +178,4 @@
 ></script>
 
 <script src="scripts/books.js"></script>
+<script src="scripts/authors.js"></script>

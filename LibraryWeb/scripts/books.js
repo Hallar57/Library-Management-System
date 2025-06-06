@@ -1,7 +1,7 @@
-const books_API_LINK =
+const BOOKS_API_LINK =
   "https://curly-invention-r47rr5q756p7cp9x4-5001.app.github.dev/books";
 
-fetch(books_API_LINK)
+fetch(BOOKS_API_LINK)
   .then((response) => {
     if (!response.ok) throw new Error("Failed to fetch data");
     return response.json();
