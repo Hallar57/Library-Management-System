@@ -19,6 +19,49 @@
   </head>
 
   <body>
+    <header>
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-light"
+      >
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+              
+              <li class="nav-item">
+                <a class="nav-link" href="homepage.html" aria-current="page"
+                  >Home
+                  <span class="visually-hidden">(current)</span></a
+                >
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link active" href="tables.html" aria-current="page"
+                  >Tables
+                  <span class="visually-hidden">(current)</span></a
+                >
+              </li>
+
+            </ul>
+
+            <form class="d-flex my-2 my-lg-0">
+              <input
+                class="form-control me-sm-2"
+                type="text"
+                placeholder="Search"
+              />
+              <button
+                class="btn btn-outline-success my-2 my-sm-0"
+                type="submit"
+              >
+                Search
+              </button>
+
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
@@ -32,7 +75,7 @@
           aria-controls="home"
           aria-selected="true"
         >
-          Home
+          Books
         </button>
       </li>
       <li class="nav-item" role="presentation">
@@ -64,7 +107,7 @@
         </button>
       </li>
     </ul>
-
+    
     <!-- Tab panes -->
     <div class="tab-content">
       <div
@@ -73,7 +116,7 @@
         role="tabpanel"
         aria-labelledby="home-tab"
       >
-        <div class="table-responsive">
+                 <div class="table-responsive">
           <table class="table table-primary" id="bookstable">
             <thead>
               <tr>
@@ -97,7 +140,7 @@
         role="tabpanel"
         aria-labelledby="profile-tab"
       >
-        profile
+         profile 
       </div>
       <div
         class="tab-pane"
@@ -105,11 +148,12 @@
         role="tabpanel"
         aria-labelledby="messages-tab"
       >
-        messages
+         messages 
       </div>
     </div>
+    
 
-    <div></div>
+    
   </body>
 </html>
 
