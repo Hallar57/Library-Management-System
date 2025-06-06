@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Tables</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -179,6 +179,36 @@
           Staff
         </button>
       </li>
+
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link"
+          id="publishers-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#publishers"
+          type="button"
+          role="tab"
+          aria-controls="publishers"
+          aria-selected="false"
+        >
+          Publishers
+        </button>
+      </li>
+
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link"
+          id="membership_type-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#membership_type"
+          type="button"
+          role="tab"
+          aria-controls="membership_type"
+          aria-selected="false"
+        >
+          Membership Type
+        </button>
+      </li>
     </ul>
 
     <!-- Tab panes -->
@@ -353,27 +383,66 @@
           </table>
         </div>
       </div>
+
+      <div
+        class="tab-pane"
+        id="publishers"
+        role="tabpanel"
+        aria-labelledby="publishers-tab"
+      >
+        <div class="table-responsive">
+          <table class="table table-primary" id="publisherstable">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div
+        class="tab-pane"
+        id="membership_type"
+        role="tabpanel"
+        aria-labelledby="membership_type-tab"
+      >
+        <div class="table-responsive">
+          <table class="table table-primary" id="membership_typetable">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      
     </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="scripts/books.js"></script>
+    <script src="scripts/authors.js"></script>
+    <script src="scripts/staff.js"></script>
+    <script src="scripts/categories.js"></script>
+    <script src="scripts/fines.js"></script>
+    <script src="scripts/loans.js"></script>
+    <script src="scripts/members.js"></script>
+    <script src="scripts/reservations.js"></script>
   </body>
 </html>
-
-<script
-  src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-  integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-  crossorigin="anonymous"
-></script>
-
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-  integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-  crossorigin="anonymous"
-></script>
-
-<script src="scripts/books.js"></script>
-<script src="scripts/authors.js"></script>
-<script src="scripts/staff.js"></script>
-<script src="scripts/categories.js"></script>
-<script src="scripts/fines.js"></script>
-<script src="scripts/loans.js"></script>
-<script src="scripts/members.js"></script>
-<script src="scripts/reservations.js"></script>

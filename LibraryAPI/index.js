@@ -92,3 +92,20 @@ app.get("/reservations", async (req, res) => {
   }
 });
 
+app.get("/publishers", async (req, res) => {
+  try {
+    const result = await pool.query("select * from publishers");
+    res.json(result.rows);
+  } catch (err) {
+    res.status(500).json({ Error: err.message });
+  }
+});
+
+app.get("/membership_type", async (req, res) => {
+  try {
+    const result = await pool.query("select * from membership_type");
+    res.json(result.rows);
+  } catch (err) {
+    res.status(500).json({ Error: err.message });
+  }
+});
