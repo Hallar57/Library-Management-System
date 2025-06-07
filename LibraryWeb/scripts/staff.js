@@ -1,26 +1,60 @@
 const STAFF_API_LINK =
   "https://curly-invention-r47rr5q756p7cp9x4-5001.app.github.dev/staff";
 
-fetch(STAFF_API_LINK)
-  .then((response) => {
-    if (!response.ok) throw new Error("Failed to fetch data");
-    return response.json();
-  })
-  .then((data) => {
-    const tbody = document.querySelector("#stafftable tbody");
+function load_staff() {
+  fetch(STAFF_API_LINK)
+    .then((response) => {
+      if (!response.ok) throw new Error("Failed to fetch data");
+      return response.json();
+    })
+    .then((data) => {
+      const tbody = document.querySelector("#stafftable tbody");
+      tbody.innerHTML = "";
 
-    data.forEach((staff) => {
-      const row = document.createElement("tr");
-
-      row.innerHTML = `
-        <td>${staff.staff_id}</td>
-        <td>${staff.staff_name}</td>
-        <td>${staff.role}</td>
-        <td>${staff.email}</td>
+      data.forEach((staff) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${staff.staff_id}</td>
+          <td>${staff.staff_name}</td>
+          <td>${staff.nationality}</td>
+          <td>${staff.date_of_birth}</td>
         `;
-      tbody.appendChild(row);
+        tbody.appendChild(row);
+      });
+    })
+    .catch((err) => {
+      console.log(err.message);
     });
-  })
-  .catch((err) => {
-    console.log(err.message);
-  });
+}
+
+document.getElementById("staffForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(e.target);
+  const staff = Object.fromEntries(formData.entries());
+
+  ["staff_id", "staff_name", "nationality", "date_of_birth"].forEach(
+    (key) => {
+      staff[key] = Number(staff[key]);
+    }
+  );
+
+  try {
+    const response = await fetch(STAFF_API_LINK, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(staff),
+    });
+
+    if (!response.ok) throw new Error("Failed to add staff");
+
+    e.target.reset();
+    load_staff();
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
+load_staff();
