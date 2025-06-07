@@ -109,3 +109,37 @@ app.get("/membership_type", async (req, res) => {
     res.status(500).json({ Error: err.message });
   }
 });
+
+app.post("/books", async (req, res) => {
+  try {
+    const {
+      book_id,
+      title,
+      author_id,
+      publisher_id,
+      category_id,
+      isbn,
+      published_year,
+      available_copies,
+    } = req.body;
+
+    const newBook = await pool.query(
+      `INSERT INTO books (book_id, title, author_id, publisher_id, category_id, isbn, published_year, available_copies)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *`,
+      [
+        book_id,
+        title,
+        author_id,
+        publisher_id,
+        category_id,
+        isbn,
+        published_year,
+        available_copies,
+      ]
+    );
+
+    res.status(201).json(newBook.rows[0]);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
