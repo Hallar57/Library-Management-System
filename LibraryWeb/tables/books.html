@@ -31,10 +31,7 @@
               </li>
 
               <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  href="books.html"
-                  aria-current="page"
+                <a class="nav-link active" href="books.html" aria-current="page"
                   >Tables <span class="visually-hidden">(current)</span></a
                 >
               </li>
@@ -81,7 +78,7 @@
         >
       </li>
 
-       <li class="nav-item" role="presentation">
+      <li class="nav-item" role="presentation">
         <a class="nav-link" href="categories.html?tab=categories" role="tab"
           >Categories</a
         >
@@ -247,21 +244,6 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const urlParams = new URLSearchParams(window.location.search);
-        const tab = urlParams.get("tab");
-
-        if (tab === "books") {
-          // Activate Authors tab manually
-          const triggerTab = document.querySelector(`#books-tab`);
-          if (triggerTab) {
-            new bootstrap.Tab(triggerTab).show();
-          }
-        }
-      });
-    </script>
 
     <script src="../scripts/books.js"></script>
   </body>

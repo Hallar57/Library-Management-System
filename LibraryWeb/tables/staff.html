@@ -62,23 +62,14 @@
       </li>
 
       <li class="nav-item" role="presentation">
-        <button
-          class="nav-link active"
-          id="authors-tab"
-          data-bs-toggle="tab"
-          data-bs-target="#authors"
-          type="button"
-          role="tab"
-          aria-controls="authors"
-          aria-selected="true"
+        <a class="nav-link" href="authors.html?tab=authors" role="tab"
+          >Authors</a
         >
-          Authors
-        </button>
       </li>
 
       <li class="nav-item" role="presentation">
         <a class="nav-link" href="categories.html?tab=categories" role="tab"
-          >Categories</a
+          >categories</a
         >
       </li>
 
@@ -103,7 +94,18 @@
       </li>
 
       <li class="nav-item" role="presentation">
-        <a class="nav-link" href="staff.html?tab=staff" role="tab">Staff</a>
+        <button
+          class="nav-link active"
+          id="staff-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#staff"
+          type="button"
+          role="tab"
+          aria-controls="staff"
+          aria-selected="true"
+        >
+          staff
+        </button>
       </li>
 
       <li class="nav-item" role="presentation">
@@ -131,14 +133,14 @@
         aria-labelledby="home-tab"
       >
         <div class="container my-4">
-          <h4 class="text-light">Add a New author</h4>
-          <form id="authorForm" class="row g-3 text-light">
+          <h4 class="text-light">Add a New staff</h4>
+          <form id="staffForm" class="row g-3 text-light">
             <div class="col-md-2">
               <input
                 type="number"
                 class="form-control"
-                placeholder="author id"
-                name="author_id"
+                placeholder="staff id"
+                name="staff_id"
                 required
               />
             </div>
@@ -155,8 +157,8 @@
               <input
                 type="number"
                 class="form-control"
-                placeholder="Author ID"
-                name="author_id"
+                placeholder="staff ID"
+                name="staff_id"
                 required
               />
             </div>
@@ -206,18 +208,18 @@
               />
             </div>
             <div class="col-md-12">
-              <button type="submit" class="btn btn-success">Add author</button>
+              <button type="submit" class="btn btn-success">Add staff</button>
             </div>
           </form>
         </div>
 
         <div class="table-responsive">
-          <table class="table table-dark" id="authorstable">
+          <table class="table table-dark" id="stafftable">
             <thead>
               <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Title</th>
-                <th scope="col">Author ID</th>
+                <th scope="col">category ID</th>
                 <th scope="col">Publisher ID</th>
                 <th scope="col">Category ID</th>
                 <th scope="col">ISBN</th>
@@ -243,6 +245,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="../scripts/authors.js"></script>
+    <script src="../scripts/staff.js"></script>
   </body>
 </html>

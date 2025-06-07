@@ -61,7 +61,6 @@
         <a class="nav-link" href="books.html?tab=books" role="tab">Books</a>
       </li>
 
-      
       <li class="nav-item" role="presentation">
         <a class="nav-link" href="authors.html?tab=authors" role="tab"
           >Authors</a
@@ -70,14 +69,14 @@
 
       <li class="nav-item" role="presentation">
         <button
-          class="nav-link"
+          class="nav-link active"
           id="categories-tab"
           data-bs-toggle="tab"
           data-bs-target="#categories"
           type="button"
           role="tab"
           aria-controls="categories"
-          aria-selected="false"
+          aria-selected="true"
         >
           Categories
         </button>
@@ -246,21 +245,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="scripts/categories.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const urlParams = new URLSearchParams(window.location.search);
-        const tab = urlParams.get("tab");
-
-        if (tab === "categories") {
-          // Activate categories tab manually
-          const triggerTab = document.querySelector(`#categories-tab`);
-          if (triggerTab) {
-            new bootstrap.Tab(triggerTab).show();
-          }
-        }
-      });
-    </script>
     <script src="../scripts/categories.js"></script>
   </body>
 </html>
