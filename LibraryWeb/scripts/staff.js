@@ -1,7 +1,7 @@
 import formatDate from "./utils/formatDate.js";
 
-const STAFF_API_LINK =
-  "https://curly-invention-r47rr5q756p7cp9x4-5001.app.github.dev/staff";
+//const STAFF_API_LINK = "https://curly-invention-r47rr5q756p7cp9x4-5001.app.github.dev/staff";
+const STAFF_API_LINK = "http://127.0.0.1:5001/staff";
 
 function load_staff() {
   fetch(STAFF_API_LINK)

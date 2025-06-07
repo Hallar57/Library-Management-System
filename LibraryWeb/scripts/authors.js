@@ -1,7 +1,7 @@
 import formatDate from "./utils/formatDate.js";
 
-const AUTHORS_API_LINK =
-  "https://curly-invention-r47rr5q756p7cp9x4-5001.app.github.dev/authors";
+//const AUTHORS_API_LINK = "https://curly-invention-r47rr5q756p7cp9x4-5001.app.github.dev/authors";
+const AUTHORS_API_LINK = "http://127.0.0.1:5001/authors";
 
 function load_authors() {
   fetch(AUTHORS_API_LINK)
