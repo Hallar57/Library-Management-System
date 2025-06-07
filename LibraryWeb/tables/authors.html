@@ -25,7 +25,7 @@
           <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav me-auto mt-2 mt-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="homepage.html" aria-current="page"
+                <a class="nav-link" href="../homepage.html" aria-current="page"
                   >Home <span class="visually-hidden">(current)</span></a
                 >
               </li>
@@ -33,7 +33,7 @@
               <li class="nav-item">
                 <a
                   class="nav-link active"
-                  href="tables.html"
+                  href="books.html"
                   aria-current="page"
                   >Tables <span class="visually-hidden">(current)</span></a
                 >
@@ -61,18 +61,9 @@
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
-        <button
-          class="nav-link active"
-          id="home-tab"
-          data-bs-toggle="tab"
-          data-bs-target="#home"
-          type="button"
-          role="tab"
-          aria-controls="home"
-          aria-selected="true"
+        <a class="nav-link" href="books.html?tab=books" role="tab"
+          >Books</a
         >
-          Books
-        </button>
       </li>
 
       <li class="nav-item" role="presentation">
@@ -220,14 +211,14 @@
         aria-labelledby="home-tab"
       >
         <div class="container my-4">
-          <h4 class="text-light">Add a New Book</h4>
-          <form id="bookForm" class="row g-3 text-light">
+          <h4 class="text-light">Add a New author</h4>
+          <form id="authorForm" class="row g-3 text-light">
             <div class="col-md-2">
               <input
                 type="number"
                 class="form-control"
-                placeholder="book id"
-                name="book_id"
+                placeholder="author id"
+                name="author_id"
                 required
               />
             </div>
@@ -295,13 +286,13 @@
               />
             </div>
             <div class="col-md-12">
-              <button type="submit" class="btn btn-success">Add Book</button>
+              <button type="submit" class="btn btn-success">Add author</button>
             </div>
           </form>
         </div>
 
         <div class="table-responsive">
-          <table class="table table-dark" id="bookstable">
+          <table class="table table-dark" id="authorstable">
             <thead>
               <tr>
                 <th scope="col">ID</th>
@@ -312,193 +303,6 @@
                 <th scope="col">ISBN</th>
                 <th scope="col">Published Year</th>
                 <th scope="col">Available Copies</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-      <div
-        class="tab-pane"
-        id="authors"
-        role="tabpanel"
-        aria-labelledby="authors-tab"
-      >
-        <div class="table-responsive">
-          <table class="table table-dark" id="authorstable">
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Nationality</th>
-                <th scope="col">Date of Birth</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-
-      <div
-        class="tab-pane"
-        id="categories"
-        role="tabpanel"
-        aria-labelledby="categories-tab"
-      >
-        <div class="table-responsive">
-          <table class="table table-dark" id="categoriestable">
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-
-      <div
-        class="tab-pane"
-        id="fines"
-        role="tabpanel"
-        aria-labelledby="fines-tab"
-      >
-        <div class="table-responsive">
-          <table class="table table-dark" id="finestable">
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Loan ID</th>
-                <th scope="col">Amount</th>
-                <th scope="col">Date</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-
-      <div
-        class="tab-pane"
-        id="loans"
-        role="tabpanel"
-        aria-labelledby="loans-tab"
-      >
-        <div class="table-responsive">
-          <table class="table table-dark" id="loanstable">
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Book ID</th>
-                <th scope="col">Member ID</th>
-                <th scope="col">Staff ID</th>
-                <th scope="col">Loan Date</th>
-                <th scope="col">Due Date</th>
-                <th scope="col">Return Date</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-
-      <div
-        class="tab-pane"
-        id="members"
-        role="tabpanel"
-        aria-labelledby="members-tab"
-      >
-        <div class="table-responsive">
-          <table class="table table-dark" id="memberstable">
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Membership Date</th>
-                <th scope="col">Membership Type ID</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-
-      <div
-        class="tab-pane"
-        id="reservations"
-        role="tabpanel"
-        aria-labelledby="reservations-tab"
-      >
-        <div class="table-responsive">
-          <table class="table table-dark" id="reservationstable">
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Book ID</th>
-                <th scope="col">Member ID</th>
-                <th scope="col">Reservation Date</th>
-                <th scope="col">Status</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-
-      <div
-        class="tab-pane"
-        id="staff"
-        role="tabpanel"
-        aria-labelledby="staff-tab"
-      >
-        <div class="table-responsive">
-          <table class="table table-dark" id="stafftable">
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Role</th>
-                <th scope="col">Email</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-
-      <div
-        class="tab-pane"
-        id="publishers"
-        role="tabpanel"
-        aria-labelledby="publishers-tab"
-      >
-        <div class="table-responsive">
-          <table class="table table-dark" id="publisherstable">
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-
-      <div
-        class="tab-pane"
-        id="membership_type"
-        role="tabpanel"
-        aria-labelledby="membership_type-tab"
-      >
-        <div class="table-responsive">
-          <table class="table table-dark" id="membership_typetable">
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
               </tr>
             </thead>
             <tbody></tbody>
@@ -519,13 +323,21 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="scripts/books.js"></script>
     <script src="scripts/authors.js"></script>
-    <script src="scripts/staff.js"></script>
-    <script src="scripts/categories.js"></script>
-    <script src="scripts/fines.js"></script>
-    <script src="scripts/loans.js"></script>
-    <script src="scripts/members.js"></script>
-    <script src="scripts/reservations.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const tab = urlParams.get("tab");
+
+        if (tab === "authors") {
+          // Activate Authors tab manually
+          const triggerTab = document.querySelector(`#authors-tab`);
+          if (triggerTab) {
+            new bootstrap.Tab(triggerTab).show();
+          }
+        }
+      });
+    </script>
+    <script src="../scripts/authors.js"></script>
   </body>
-</html>-->
+</html>

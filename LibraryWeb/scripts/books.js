@@ -1,7 +1,6 @@
 const BOOKS_API_LINK =
   "https://curly-invention-r47rr5q756p7cp9x4-5001.app.github.dev/books";
 
-// Wrap fetch logic in a function so we can call it again
 function loadBooks() {
   fetch(BOOKS_API_LINK)
     .then((response) => {
@@ -32,14 +31,12 @@ function loadBooks() {
     });
 }
 
-
 document.getElementById("bookForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const formData = new FormData(e.target);
   const book = Object.fromEntries(formData.entries());
 
-  // Convert numeric fields
   ["book_id","author_id", "publisher_id", "category_id", "published_year", "available_copies"].forEach(key => {
     book[key] = Number(book[key]);
   });
@@ -55,14 +52,12 @@ document.getElementById("bookForm").addEventListener("submit", async (e) => {
 
     if (!response.ok) throw new Error("Failed to add book");
 
-    // Clear form and reload books
     e.target.reset();
-    loadBooks(); // Re-fetch and display updated list
+    loadBooks();
   } catch (err) {
     console.error(err.message);
   }
 });
 
 
-// Load books on initial page load
 loadBooks();
