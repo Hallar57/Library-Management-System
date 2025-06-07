@@ -1,4 +1,5 @@
-const CATEGORIES_API_LINK = "https://curly-invention-r47rr5q756p7cp9x4-5001.app.github.dev/categories";
+const CATEGORIES_API_LINK =
+  "https://curly-invention-r47rr5q756p7cp9x4-5001.app.github.dev/categories";
 
 function load_categories() {
   fetch(CATEGORIES_API_LINK)
@@ -30,11 +31,12 @@ document.getElementById("categoryForm").addEventListener("submit", async (e) => 
   const formData = new FormData(e.target);
   const category = Object.fromEntries(formData.entries());
 
-  ["category_id", "category_name",].forEach(
-    (key) => {
-      category[key] = Number(category[key]);
-    }
-  );
+  [
+    "category_id",
+    "category_name",
+  ].forEach((key) => {
+    category[key] = Number(category[key]);
+  });
 
   try {
     const response = await fetch(CATEGORIES_API_LINK, {

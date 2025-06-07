@@ -43,8 +43,8 @@ app.post("/books", async (req, res) => {
     } = req.body;
 
     const newBook = await pool.query(
-      `INSERT INTO books (book_id, title, author_id, publisher_id, category_id, isbn, published_year, available_copies)
-       VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *`,
+      `insert into books (book_id, title, author_id, publisher_id, category_id, isbn, published_year, available_copies)
+       values($1, $2, $3, $4, $5, $6, $7, $8) returning *`,
       [
         book_id,
         title,
@@ -77,7 +77,7 @@ app.post("/authors", async (req, res) => {
     const { author_id, author_name, nationality, date_of_birth } = req.body;
 
     const newAuthor = await pool.query(
-      `INSERT INTO authors(author_id, author_name, nationality, date_of_birth) VALUES ($1, $2, $3, $4) RETURNING *`,
+      `insert into authors(author_id, author_name, nationality, date_of_birth) values($1, $2, $3, $4) returning *`,
       [author_id, author_name, nationality, date_of_birth]
     );
 
@@ -101,7 +101,7 @@ app.post("/categories", async (req, res) => {
     const { category_id, category_name, } = req.body;
 
     const newCategory = await pool.query(
-      `INSERT INTO categories (category_id, category_name) VALUES ($1, $2) RETURNING *`,
+      `insert into categories (category_id, category_name) values($1, $2) returning *`,
       [category_id, category_name,]
     );
 
@@ -125,8 +125,8 @@ app.post("/staff", async (req, res) => {
     const { staff_id, staff_name, role, email } = req.body;
 
     const newStaff = await pool.query(
-      `INSERT INTO staff(staff_id, staff_name, role, email)
-       VALUES ($1, $2, $3, $4) RETURNING *`,
+      `insert into staff(staff_id, staff_name, role, email)
+       values($1, $2, $3, $4) returning *`,
       [staff_id, staff_name, role, email]
     );
 
@@ -151,8 +151,8 @@ app.post("/members", async (req, res) => {
       req.body;
 
     const newMember = await pool.query(
-      `INSERT INTO members (member_id, member_name, email, membership_date, member_type_id,)
-       VALUES ($1, $2, $3, $4, $5) RETURNING *`,
+      `insert into members (member_id, member_name, email, membership_date, member_type_id,)
+       values($1, $2, $3, $4, $5) returning *`,
       [member_id, member_name, email, membership_date, member_type_id]
     );
 
@@ -184,8 +184,8 @@ app.post("/loans", async (req, res) => {
     } = req.body;
 
     const newLoan = await pool.query(
-      `INSERT INTO loans (loan_id, book_id, member_id, staff_id, loan_date, due_date, return_date,)
-       VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *`,
+      `insert into loans (loan_id, book_id, member_id, staff_id, loan_date, due_date, return_date,)
+       values($1, $2, $3, $4, $5, $6, $7) returning *`,
       [loan_id, book_id, member_id, staff_id, loan_date, due_date, return_date]
     );
 
@@ -209,7 +209,7 @@ app.post("/fines", async (req, res) => {
     const { fine_id, loan_id, amount, paid_status } = req.body;
 
     const newFine = await pool.query(
-      `INSERT INTO fines (fine_id, loan_id, amount, paid_status,) VALUES ($1, $2, $3, $4) RETURNING *`,
+      `insert into fines (fine_id, loan_id, amount, paid_status,) values($1, $2, $3, $4) returning *`,
       [fine_id, loan_id, amount, paid_status]
     );
 
@@ -234,7 +234,7 @@ app.post("/reservations", async (req, res) => {
       req.body;
 
     const newReservations = await pool.query(
-      `INSERT INTO reservations ( reservation_id, book_id, member_id, rservation_date, status,) VALUES ($1, $2, $3, $4, $5) RETURNING *`,
+      `insert into reservations ( reservation_id, book_id, member_id, rservation_date, status,) values($1, $2, $3, $4, $5) returning *`,
       [reservation_id, book_id, member_id, rservation_date, status]
     );
 
@@ -258,7 +258,7 @@ app.post("/publishers", async (req, res) => {
     const { publisher_id, publisher_name } = req.body;
 
     const newPublishers = await pool.query(
-      `INSERT INTO publishers ( publisher_id, publisher_name,) VALUES ($1, $2) RETURNING *`,
+      `insert into publishers ( publisher_id, publisher_name,) values($1, $2) returning *`,
       [publisher_id, publisher_name]
     );
 
@@ -282,7 +282,7 @@ app.post("/membership_type", async (req, res) => {
     const { member_type_id, member_type_name } = req.body;
 
     const newMembership_type = await pool.query(
-      `INSERT INTO membership_type ( membership_type_id, member_type_name,) VALUES ($1, $2) RETURNING *`,
+      `insert into membership_type ( membership_type_id, member_type_name,) values($1, $2) returning *`,
       [member_type_id, member_type_name]
     );
 
