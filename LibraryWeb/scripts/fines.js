@@ -15,7 +15,7 @@ function load_fines() {
         const row = document.createElement("tr");
         row.innerHTML = `
           <td>${fines.fine_id}</td>
-          <td>${fines.fine_name}</td>
+          <td>${fines.loan_id}</td>
           <td>${fines.amount}</td>
           <td>${fines.paid_status}</td>
         `;
