@@ -1,3 +1,5 @@
+import formatDate from "./utils/formatDate.js";
+
 const AUTHORS_API_LINK =
   "https://curly-invention-r47rr5q756p7cp9x4-5001.app.github.dev/authors";
 
@@ -17,7 +19,7 @@ function load_authors() {
           <td>${authors.author_id}</td>
           <td>${authors.author_name}</td>
           <td>${authors.nationality}</td>
-          <td>${authors.date_of_birth}</td>
+          <td>${formatDate(authors.date_of_birth)}</td>
         `;
         tbody.appendChild(row);
       });

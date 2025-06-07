@@ -1,3 +1,5 @@
+import formatDate from "./utils/formatDate.js";
+
 const RESERVATIONS_API_LINK =
   "https://curly-invention-r47rr5q756p7cp9x4-5001.app.github.dev/reservations";
 
@@ -17,7 +19,7 @@ function load_reservations() {
           <td>${reservations.reservation_id}</td>
           <td>${reservations.book_id}</td>
           <td>${reservations.member_id}</td>
-          <td>${reservations.reservation_date}</td>
+          <td>${formatDate(reservations.reservation_date)}</td>
           <td>${reservations.status}</td>
         `;
         tbody.appendChild(row);

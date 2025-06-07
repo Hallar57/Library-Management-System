@@ -1,3 +1,5 @@
+import formatDate from "./utils/formatDate.js";
+
 const MEMBERS_API_LINK =
   "https://curly-invention-r47rr5q756p7cp9x4-5001.app.github.dev/members";
 
@@ -17,7 +19,7 @@ function load_members() {
           <td>${members.member_id}</td>
           <td>${members.member_name}</td>
           <td>${members.email}</td>
-          <td>${members.membership_date}</td>
+          <td>${formatDate(members.membership_date)}</td>
           <td>${members.member_type_id}</td>
         `;
         tbody.appendChild(row);
