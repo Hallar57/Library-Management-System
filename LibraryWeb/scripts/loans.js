@@ -36,10 +36,6 @@ document.getElementById("loanForm").addEventListener("submit", async (e) => {
   const formData = new FormData(e.target);
   const loan = Object.fromEntries(formData.entries());
 
-  ["loan_id", "loan_name", "nationality", "date_of_birth"].forEach((key) => {
-    loan[key] = Number(loan[key]);
-  });
-
   try {
     const response = await fetch(LOANS_API_LINK, {
       method: "POST",

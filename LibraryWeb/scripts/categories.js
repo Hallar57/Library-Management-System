@@ -31,13 +31,6 @@ document.getElementById("categoryForm").addEventListener("submit", async (e) => 
   const formData = new FormData(e.target);
   const category = Object.fromEntries(formData.entries());
 
-  [
-    "category_id",
-    "category_name",
-  ].forEach((key) => {
-    category[key] = Number(category[key]);
-  });
-
   try {
     const response = await fetch(CATEGORIES_API_LINK, {
       method: "POST",

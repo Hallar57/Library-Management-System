@@ -33,12 +33,6 @@ document.getElementById("fineForm").addEventListener("submit", async (e) => {
   const formData = new FormData(e.target);
   const fine = Object.fromEntries(formData.entries());
 
-  ["fine_id", "fine_name", "nationality", "date_of_birth"].forEach(
-    (key) => {
-      fine[key] = Number(fine[key]);
-    }
-  );
-
   try {
     const response = await fetch(FINES_API_LINK, {
       method: "POST",

@@ -31,12 +31,6 @@ document.getElementById("publisherForm").addEventListener("submit", async (e) =>
   const formData = new FormData(e.target);
   const publisher = Object.fromEntries(formData.entries());
 
-  ["publisher_id", "publisher_name", "nationality", "date_of_birth"].forEach(
-    (key) => {
-      publisher[key] = Number(publisher[key]);
-    }
-  );
-
   try {
     const response = await fetch(PUBLISHERS_API_LINK, {
       method: "POST",

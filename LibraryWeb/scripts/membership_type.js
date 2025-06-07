@@ -31,12 +31,6 @@ document.getElementById("membership_typeForm").addEventListener("submit", async 
   const formData = new FormData(e.target);
   const membership_type = Object.fromEntries(formData.entries());
 
-  ["membership_type_id", "membership_type_name", "nationality", "date_of_birth"].forEach(
-    (key) => {
-      membership_type[key] = Number(membership_type[key]);
-    }
-  );
-
   try {
     const response = await fetch(MEMBERSHIP_TYPE_API_LINK, {
       method: "POST",

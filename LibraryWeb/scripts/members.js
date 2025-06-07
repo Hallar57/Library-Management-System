@@ -34,12 +34,6 @@ document.getElementById("memberForm").addEventListener("submit", async (e) => {
   const formData = new FormData(e.target);
   const member = Object.fromEntries(formData.entries());
 
-  ["member_id", "member_name", "nationality", "date_of_birth"].forEach(
-    (key) => {
-      member[key] = Number(member[key]);
-    }
-  );
-
   try {
     const response = await fetch(MEMBERS_API_LINK, {
       method: "POST",

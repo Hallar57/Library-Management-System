@@ -33,12 +33,6 @@ document.getElementById("staffForm").addEventListener("submit", async (e) => {
   const formData = new FormData(e.target);
   const staff = Object.fromEntries(formData.entries());
 
-  ["staff_id", "staff_name", "nationality", "date_of_birth"].forEach(
-    (key) => {
-      staff[key] = Number(staff[key]);
-    }
-  );
-
   try {
     const response = await fetch(STAFF_API_LINK, {
       method: "POST",

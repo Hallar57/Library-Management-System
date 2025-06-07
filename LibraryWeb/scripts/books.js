@@ -37,17 +37,6 @@ document.getElementById("bookForm").addEventListener("submit", async (e) => {
   const formData = new FormData(e.target);
   const book = Object.fromEntries(formData.entries());
 
-  [
-    "book_id",
-    "author_id",
-    "publisher_id",
-    "category_id",
-    "published_year",
-    "available_copies",
-  ].forEach((key) => {
-    book[key] = Number(book[key]);
-  });
-
   try {
     const response = await fetch(BOOKS_API_LINK, {
       method: "POST",

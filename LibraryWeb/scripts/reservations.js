@@ -34,12 +34,6 @@ document.getElementById("reservationForm").addEventListener("submit", async (e) 
   const formData = new FormData(e.target);
   const reservation = Object.fromEntries(formData.entries());
 
-  ["reservation_id", "reservation_name", "nationality", "date_of_birth"].forEach(
-    (key) => {
-      reservation[key] = Number(reservation[key]);
-    }
-  );
-
   try {
     const response = await fetch(RESERVATIONS_API_LINK, {
       method: "POST",
