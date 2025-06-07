@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Books</title>
+    <title>Tables</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -31,10 +31,7 @@
               </li>
 
               <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  href="books.html"
-                  aria-current="page"
+                <a class="nav-link active" href="books.html" aria-current="page"
                   >Tables <span class="visually-hidden">(current)</span></a
                 >
               </li>
@@ -61,30 +58,29 @@
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
-        <button
-          class="nav-link active"
-          id="home-tab"
-          data-bs-toggle="tab"
-          data-bs-target="#home"
-          type="button"
-          role="tab"
-          aria-controls="home"
-          aria-selected="true"
-        >
-          Books
-        </button>
+        <a class="nav-link" href="books.html?tab=books" role="tab">Books</a>
       </li>
 
+      
       <li class="nav-item" role="presentation">
         <a class="nav-link" href="authors.html?tab=authors" role="tab"
           >Authors</a
         >
       </li>
 
-       <li class="nav-item" role="presentation">
-        <a class="nav-link" href="categories.html?tab=categories" role="tab"
-          >Categories</a
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link"
+          id="categories-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#categories"
+          type="button"
+          role="tab"
+          aria-controls="categories"
+          aria-selected="false"
         >
+          Categories
+        </button>
       </li>
 
       <li class="nav-item" role="presentation">
@@ -136,14 +132,14 @@
         aria-labelledby="home-tab"
       >
         <div class="container my-4">
-          <h4 class="text-light">Add a New Book</h4>
-          <form id="bookForm" class="row g-3 text-light">
+          <h4 class="text-light">Add a New categories</h4>
+          <form id="categoriesForm" class="row g-3 text-light">
             <div class="col-md-2">
               <input
                 type="number"
                 class="form-control"
-                placeholder="book id"
-                name="book_id"
+                placeholder="categories id"
+                name="categories_id"
                 required
               />
             </div>
@@ -160,8 +156,8 @@
               <input
                 type="number"
                 class="form-control"
-                placeholder="Author ID"
-                name="author_id"
+                placeholder="categories ID"
+                name="categories_id"
                 required
               />
             </div>
@@ -211,18 +207,20 @@
               />
             </div>
             <div class="col-md-12">
-              <button type="submit" class="btn btn-success">Add Book</button>
+              <button type="submit" class="btn btn-success">
+                Add categories
+              </button>
             </div>
           </form>
         </div>
 
         <div class="table-responsive">
-          <table class="table table-dark" id="bookstable">
+          <table class="table table-dark" id="categoriestable">
             <thead>
               <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Title</th>
-                <th scope="col">Author ID</th>
+                <th scope="col">category ID</th>
                 <th scope="col">Publisher ID</th>
                 <th scope="col">Category ID</th>
                 <th scope="col">ISBN</th>
@@ -248,21 +246,21 @@
       crossorigin="anonymous"
     ></script>
 
+    <script src="scripts/categories.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const urlParams = new URLSearchParams(window.location.search);
         const tab = urlParams.get("tab");
 
-        if (tab === "books") {
-          // Activate Authors tab manually
-          const triggerTab = document.querySelector(`#books-tab`);
+        if (tab === "categories") {
+          // Activate categories tab manually
+          const triggerTab = document.querySelector(`#categories-tab`);
           if (triggerTab) {
             new bootstrap.Tab(triggerTab).show();
           }
         }
       });
     </script>
-
-    <script src="../scripts/books.js"></script>
+    <script src="../scripts/categories.js"></script>
   </body>
 </html>
