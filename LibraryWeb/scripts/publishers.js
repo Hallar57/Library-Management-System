@@ -16,8 +16,6 @@ function load_publishers() {
         row.innerHTML = `
           <td>${publishers.publisher_id}</td>
           <td>${publishers.publisher_name}</td>
-          <td>${publishers.nationality}</td>
-          <td>${publishers.date_of_birth}</td>
         `;
         tbody.appendChild(row);
       });

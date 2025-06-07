@@ -99,12 +99,12 @@ app.get("/categories", async (req, res) => {
 
 app.post("/categories", async (req, res) => {
   try {
-    const { category_id, category_name } = req.body;
+    const { category_id, category_name, } = req.body;
 
     const newCategory = await pool.query(
-      `INSERT INTO books (category_id, category_name,)
+      `INSERT INTO categories (category_id, category_name)
        VALUES ($1, $2) RETURNING *`,
-      [category_id, category_name]
+      [category_id, category_name,]
     );
 
     res.status(201).json(newCategory.rows[0]);

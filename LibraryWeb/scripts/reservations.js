@@ -15,9 +15,10 @@ function load_reservations() {
         const row = document.createElement("tr");
         row.innerHTML = `
           <td>${reservations.reservation_id}</td>
-          <td>${reservations.reservation_name}</td>
-          <td>${reservations.nationality}</td>
-          <td>${reservations.date_of_birth}</td>
+          <td>${reservations.book_id}</td>
+          <td>${reservations.member_id}</td>
+          <td>${reservations.reservation_date}</td>
+          <td>${reservations.status}</td>
         `;
         tbody.appendChild(row);
       });

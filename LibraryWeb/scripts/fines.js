@@ -16,8 +16,8 @@ function load_fines() {
         row.innerHTML = `
           <td>${fines.fine_id}</td>
           <td>${fines.fine_name}</td>
-          <td>${fines.nationality}</td>
-          <td>${fines.date_of_birth}</td>
+          <td>${fines.amount}</td>
+          <td>${fines.paid_status}</td>
         `;
         tbody.appendChild(row);
       });

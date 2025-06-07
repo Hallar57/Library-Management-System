@@ -1,5 +1,5 @@
 const MEMBERSHIP_TYPE_API_LINK =
-  "https://curly-invention-r47rr5q756p7cp9x4-5001.app.github.dev/membership_types";
+  "https://curly-invention-r47rr5q756p7cp9x4-5001.app.github.dev/membership_type";
 
 function load_membership_type() {
   fetch(MEMBERSHIP_TYPE_API_LINK)
@@ -49,10 +49,10 @@ document.getElementById("membership_typeForm").addEventListener("submit", async 
     if (!response.ok) throw new Error("Failed to add membership_type");
 
     e.target.reset();
-    load_membership_types();
+    load_membership_type();
   } catch (err) {
     console.error(err.message);
   }
 });
 
-load_membership_types();
+load_membership_type();

@@ -16,8 +16,9 @@ function load_members() {
         row.innerHTML = `
           <td>${members.member_id}</td>
           <td>${members.member_name}</td>
-          <td>${members.nationality}</td>
-          <td>${members.date_of_birth}</td>
+          <td>${members.email}</td>
+          <td>${members.membership_date}</td>
+          <td>${members.member_type_id}</td>
         `;
         tbody.appendChild(row);
       });

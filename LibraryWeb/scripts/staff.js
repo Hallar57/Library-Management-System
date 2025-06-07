@@ -16,8 +16,8 @@ function load_staff() {
         row.innerHTML = `
           <td>${staff.staff_id}</td>
           <td>${staff.staff_name}</td>
-          <td>${staff.nationality}</td>
-          <td>${staff.date_of_birth}</td>
+          <td>${staff.role}</td>
+          <td>${staff.email}</td>
         `;
         tbody.appendChild(row);
       });
