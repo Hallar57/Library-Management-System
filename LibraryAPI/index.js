@@ -289,3 +289,12 @@ app.post("/membership_type", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+
+app.get("/books_per_category", async (req, res) => {
+  try {
+    const result = await pool.query("select * from books_per_category");
+    res.json(result.rows);
+  } catch (err) {
+    res.status(500).json({ Error: err.message });
+  }
+});
