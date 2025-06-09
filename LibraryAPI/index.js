@@ -98,11 +98,11 @@ app.get("/categories", async (req, res) => {
 
 app.post("/categories", async (req, res) => {
   try {
-    const { category_id, category_name, } = req.body;
+    const { category_id, category_name } = req.body;
 
     const newCategory = await pool.query(
       `insert into categories (category_id, category_name) values($1, $2) returning *`,
-      [category_id, category_name,]
+      [category_id, category_name]
     );
 
     res.status(201).json(newCategory.rows[0]);
@@ -151,7 +151,7 @@ app.post("/members", async (req, res) => {
       req.body;
 
     const newMember = await pool.query(
-      `insert into members (member_id, member_name, email, membership_date, member_type_id,)
+      `insert into members (member_id, member_name, email, membership_date, member_type_id)
        values($1, $2, $3, $4, $5) returning *`,
       [member_id, member_name, email, membership_date, member_type_id]
     );
@@ -180,11 +180,11 @@ app.post("/loans", async (req, res) => {
       staff_id,
       loan_date,
       due_date,
-      return_date,
+      return_date
     } = req.body;
 
     const newLoan = await pool.query(
-      `insert into loans (loan_id, book_id, member_id, staff_id, loan_date, due_date, return_date,)
+      `insert into loans (loan_id, book_id, member_id, staff_id, loan_date, due_date, return_date)
        values($1, $2, $3, $4, $5, $6, $7) returning *`,
       [loan_id, book_id, member_id, staff_id, loan_date, due_date, return_date]
     );
@@ -209,7 +209,7 @@ app.post("/fines", async (req, res) => {
     const { fine_id, loan_id, amount, paid_status } = req.body;
 
     const newFine = await pool.query(
-      `insert into fines (fine_id, loan_id, amount, paid_status,) values($1, $2, $3, $4) returning *`,
+      `insert into fines (fine_id, loan_id, amount, paid_status) values($1, $2, $3, $4) returning *`,
       [fine_id, loan_id, amount, paid_status]
     );
 
@@ -230,12 +230,12 @@ app.get("/reservations", async (req, res) => {
 
 app.post("/reservations", async (req, res) => {
   try {
-    const { reservation_id, book_id, member_id, rservation_date, status } =
+    const { reservation_id, book_id, member_id, reservation_date, status } =
       req.body;
 
     const newReservations = await pool.query(
-      `insert into reservations ( reservation_id, book_id, member_id, rservation_date, status,) values($1, $2, $3, $4, $5) returning *`,
-      [reservation_id, book_id, member_id, rservation_date, status]
+      `insert into reservations ( reservation_id, book_id, member_id, reservation_date, status) values($1, $2, $3, $4, $5) returning *`,
+      [reservation_id, book_id, member_id, reservation_date, status]
     );
 
     res.status(201).json(newReservations.rows[0]);
@@ -258,7 +258,7 @@ app.post("/publishers", async (req, res) => {
     const { publisher_id, publisher_name } = req.body;
 
     const newPublishers = await pool.query(
-      `insert into publishers ( publisher_id, publisher_name,) values($1, $2) returning *`,
+      `insert into publishers ( publisher_id, publisher_name ) values($1, $2) returning *`,
       [publisher_id, publisher_name]
     );
 
@@ -282,7 +282,7 @@ app.post("/membership_type", async (req, res) => {
     const { member_type_id, member_type_name } = req.body;
 
     const newMembership_type = await pool.query(
-      `insert into membership_type ( membership_type_id, member_type_name,) values($1, $2) returning *`,
+      `insert into membership_type ( member_type_id, member_type_name) values($1, $2) returning *`,
       [member_type_id, member_type_name]
     );
 
