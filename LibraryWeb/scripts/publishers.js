@@ -25,11 +25,11 @@ function load_publishers() {
     });
 }
 
-document.getElementById("publisherForm").addEventListener("submit", async (e) => {
+document.getElementById("publishersForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const formData = new FormData(e.target);
-  const publisher = Object.fromEntries(formData.entries());
+  const publishers = Object.fromEntries(formData.entries());
 
   try {
     const response = await fetch(PUBLISHERS_API_LINK, {
@@ -37,7 +37,7 @@ document.getElementById("publisherForm").addEventListener("submit", async (e) =>
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(publisher),
+      body: JSON.stringify(publishers),
     });
 
     if (!response.ok) throw new Error("Failed to add publisher");
