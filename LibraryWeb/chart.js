@@ -10,7 +10,7 @@ async function load_chart() {
     })
     .then((data) => {
       new Chart(ctx, {
-        type: "pie",
+        type: "bar",
         data: {
           labels: data.map((row) => row.category_name),
           datasets: [
