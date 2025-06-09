@@ -51,6 +51,7 @@ document.getElementById("reservationForm").addEventListener("submit", async (e) 
     load_reservations();
   } catch (err) {
     console.error(err.message);
+    alert("Invalid Input!");
   }
 });
 

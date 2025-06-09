@@ -53,6 +53,7 @@ document.getElementById("loanForm").addEventListener("submit", async (e) => {
     load_loans();
   } catch (err) {
     console.error(err.message);
+    alert("Invalid Input!");
   }
 });
 

@@ -52,6 +52,7 @@ document.getElementById("bookForm").addEventListener("submit", async (e) => {
     load_books();
   } catch (err) {
     console.error(err.message);
+    alert("Invalid Input!");
   }
 });
 

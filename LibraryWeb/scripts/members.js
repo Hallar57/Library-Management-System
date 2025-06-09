@@ -51,6 +51,7 @@ document.getElementById("memberForm").addEventListener("submit", async (e) => {
     load_members();
   } catch (err) {
     console.error(err.message);
+    alert("Invalid Input!");
   }
 });
 

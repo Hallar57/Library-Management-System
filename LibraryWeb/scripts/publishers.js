@@ -46,6 +46,7 @@ document.getElementById("publishersForm").addEventListener("submit", async (e) =
     load_publishers();
   } catch (err) {
     console.error(err.message);
+    alert("Invalid Input!");
   }
 });
 

@@ -46,6 +46,7 @@ document.getElementById("categoryForm").addEventListener("submit", async (e) => 
     load_categories();
   } catch (err) {
     console.error(err.message);
+    alert("Invalid Input!");
   }
 });
 

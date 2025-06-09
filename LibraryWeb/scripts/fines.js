@@ -48,6 +48,7 @@ document.getElementById("fineForm").addEventListener("submit", async (e) => {
     load_fines();
   } catch (err) {
     console.error(err.message);
+    alert("Invalid Input!");
   }
 });
 

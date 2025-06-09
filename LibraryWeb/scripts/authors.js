@@ -52,6 +52,7 @@ document.getElementById("authorForm").addEventListener("submit", async (e) => {
     load_authors();
   } catch (err) {
     console.error(err.message);
+    alert("Invalid Input!");
   }
 });
 

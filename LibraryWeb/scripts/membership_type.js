@@ -46,6 +46,7 @@ document.getElementById("membership_typeForm").addEventListener("submit", async 
     load_membership_type();
   } catch (err) {
     console.error(err.message);
+    alert("Invalid Input!");
   }
 });
 

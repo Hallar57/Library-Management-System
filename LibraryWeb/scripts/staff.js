@@ -48,6 +48,7 @@ document.getElementById("staffForm").addEventListener("submit", async (e) => {
     load_staff();
   } catch (err) {
     console.error(err.message);
+    alert("Invalid Input!");
   }
 });
 
