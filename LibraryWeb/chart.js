@@ -9,15 +9,14 @@ async function load_chart() {
       return response.json();
     })
     .then((data) => {
-
       new Chart(ctx, {
         type: "pie",
         data: {
-          labels: data.map(row => row.category_name),
+          labels: data.map((row) => row.category_name),
           datasets: [
             {
               label: "Number of Books",
-              data: data.map(row => row.count),
+              data: data.map((row) => row.count),
               borderWidth: 1,
             },
           ],

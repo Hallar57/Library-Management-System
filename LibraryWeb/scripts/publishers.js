@@ -25,29 +25,31 @@ function load_publishers() {
     });
 }
 
-document.getElementById("publishersForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
+document
+  .getElementById("publishersForm")
+  .addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  const formData = new FormData(e.target);
-  const publishers = Object.fromEntries(formData.entries());
+    const formData = new FormData(e.target);
+    const publishers = Object.fromEntries(formData.entries());
 
-  try {
-    const response = await fetch(PUBLISHERS_API_LINK, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(publishers),
-    });
+    try {
+      const response = await fetch(PUBLISHERS_API_LINK, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(publishers),
+      });
 
-    if (!response.ok) throw new Error("Failed to add publisher");
+      if (!response.ok) throw new Error("Failed to add publisher");
 
-    e.target.reset();
-    load_publishers();
-  } catch (err) {
-    console.error(err.message);
-    alert("Invalid Input!");
-  }
-});
+      e.target.reset();
+      load_publishers();
+    } catch (err) {
+      console.error(err.message);
+      alert("Invalid Input!");
+    }
+  });
 
 load_publishers();

@@ -25,29 +25,31 @@ function load_membership_type() {
     });
 }
 
-document.getElementById("membership_typeForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
+document
+  .getElementById("membership_typeForm")
+  .addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  const formData = new FormData(e.target);
-  const membership_type = Object.fromEntries(formData.entries());
+    const formData = new FormData(e.target);
+    const membership_type = Object.fromEntries(formData.entries());
 
-  try {
-    const response = await fetch(MEMBERSHIP_TYPE_API_LINK, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(membership_type),
-    });
+    try {
+      const response = await fetch(MEMBERSHIP_TYPE_API_LINK, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(membership_type),
+      });
 
-    if (!response.ok) throw new Error("Failed to add membership_type");
+      if (!response.ok) throw new Error("Failed to add membership_type");
 
-    e.target.reset();
-    load_membership_type();
-  } catch (err) {
-    console.error(err.message);
-    alert("Invalid Input!");
-  }
-});
+      e.target.reset();
+      load_membership_type();
+    } catch (err) {
+      console.error(err.message);
+      alert("Invalid Input!");
+    }
+  });
 
 load_membership_type();

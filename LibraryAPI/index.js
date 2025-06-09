@@ -173,14 +173,8 @@ app.get("/loans", async (req, res) => {
 
 app.post("/loans", async (req, res) => {
   try {
-    const {
-      loan_id,
-      book_id,
-      member_id,
-      staff_id,
-      loan_date,
-      return_date
-    } = req.body;
+    const { loan_id, book_id, member_id, staff_id, loan_date, return_date } =
+      req.body;
 
     const newLoan = await pool.query(
       `insert into loans (loan_id, book_id, member_id, staff_id, loan_date, return_date) values($1, $2, $3, $4, $5, $6) returning *`,
@@ -292,7 +286,9 @@ app.post("/membership_type", async (req, res) => {
 
 app.get("/books_per_category", async (req, res) => {
   try {
-    const result = await pool.query("select c.category_name, count(c.category_id) from books b join categories c on b.category_id=c.category_id group by c.category_name, c.category_id");
+    const result = await pool.query(
+      "select c.category_name, count(c.category_id) from books b join categories c on b.category_id=c.category_id group by c.category_name, c.category_id"
+    );
     res.json(result.rows);
   } catch (err) {
     res.status(500).json({ Error: err.message });

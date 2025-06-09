@@ -30,29 +30,31 @@ function load_reservations() {
     });
 }
 
-document.getElementById("reservationForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
+document
+  .getElementById("reservationForm")
+  .addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  const formData = new FormData(e.target);
-  const reservation = Object.fromEntries(formData.entries());
+    const formData = new FormData(e.target);
+    const reservation = Object.fromEntries(formData.entries());
 
-  try {
-    const response = await fetch(RESERVATIONS_API_LINK, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(reservation),
-    });
+    try {
+      const response = await fetch(RESERVATIONS_API_LINK, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(reservation),
+      });
 
-    if (!response.ok) throw new Error("Failed to add reservation");
+      if (!response.ok) throw new Error("Failed to add reservation");
 
-    e.target.reset();
-    load_reservations();
-  } catch (err) {
-    console.error(err.message);
-    alert("Invalid Input!");
-  }
-});
+      e.target.reset();
+      load_reservations();
+    } catch (err) {
+      console.error(err.message);
+      alert("Invalid Input!");
+    }
+  });
 
 load_reservations();

@@ -25,29 +25,31 @@ function load_categories() {
     });
 }
 
-document.getElementById("categoryForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
+document
+  .getElementById("categoryForm")
+  .addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  const formData = new FormData(e.target);
-  const category = Object.fromEntries(formData.entries());
+    const formData = new FormData(e.target);
+    const category = Object.fromEntries(formData.entries());
 
-  try {
-    const response = await fetch(CATEGORIES_API_LINK, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(category),
-    });
+    try {
+      const response = await fetch(CATEGORIES_API_LINK, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(category),
+      });
 
-    if (!response.ok) throw new Error("Failed to add category");
+      if (!response.ok) throw new Error("Failed to add category");
 
-    e.target.reset();
-    load_categories();
-  } catch (err) {
-    console.error(err.message);
-    alert("Invalid Input!");
-  }
-});
+      e.target.reset();
+      load_categories();
+    } catch (err) {
+      console.error(err.message);
+      alert("Invalid Input!");
+    }
+  });
 
 load_categories();

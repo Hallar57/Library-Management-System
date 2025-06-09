@@ -35,8 +35,6 @@ document.getElementById("authorForm").addEventListener("submit", async (e) => {
   const formData = new FormData(e.target);
   const author = Object.fromEntries(formData.entries());
 
-
-
   try {
     const response = await fetch(AUTHORS_API_LINK, {
       method: "POST",
