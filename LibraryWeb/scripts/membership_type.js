@@ -1,5 +1,3 @@
-import formatDate from "./utils/formatDate.js";
-
 //const MEMBErshiP_TYPE_API_LINK = "https://curly-invention-r47rr5q756p7cp9x4-5001.app.github.dev/membership_type";
 const MEMBERSHIP_TYPE_API_LINK = "http://127.0.0.1:5001/membership_type";
 
