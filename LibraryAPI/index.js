@@ -292,7 +292,7 @@ app.post("/membership_type", async (req, res) => {
 
 app.get("/books_per_category", async (req, res) => {
   try {
-    const result = await pool.query("select * from books_per_category");
+    const result = await pool.query("select c.category_name, count(c.category_id) from books b join categories c on b.category_id=c.category_id group by c.category_name, c.category_id");
     res.json(result.rows);
   } catch (err) {
     res.status(500).json({ Error: err.message });
