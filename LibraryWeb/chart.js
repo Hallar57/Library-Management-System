@@ -2,7 +2,7 @@ const ctx = document.getElementById("myChart");
 
 datalink = "http://127.0.0.1:5001/books_per_category";
 
-async function load_chart() {
+function load_chart() {
   fetch(datalink)
     .then((response) => {
       if (!response.ok) throw new Error("Failed to fetch data");
